@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/salome',[RegisterController::class,'index']);
-Route::get('/register',[RegisterController::class,'register']);
+
 
 Route::get('/pegawai',[PegawaiController::class,'index'])->name('pegawai.index');
 Route::get('/create',[PegawaiController::class, 'create'])->name('pegawai.create');
@@ -32,8 +33,8 @@ Route::post('/update/{id}', [PegawaiController::class, 'update'])->name('pegawai
 
 Route::get('/delete/{id}', [PegawaiController::class, 'delete'])->name('pegawai.delete');
 
+Route::get('/login',[LoginController::class,  'login'])->name('login');
+Route::post('/loginproses',[LoginController::class,  'loginproses'])->name('loginproses');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::middleware(['auth', 'admin'])->group(function ()
- {Route::get('admin', function () { return 'admin page'; });
-});
+Route::get('/logout',[LoginController::class,  'logout'])->name('logout');
+

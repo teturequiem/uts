@@ -47,7 +47,7 @@
                                 <td>{{ $p->alamat }}</td>
                                  <td>
                                         <a href="{{ route('pegawai.edit',$p->id) }} class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                        <a  href="{{ route('pegawai.delete',$p->id) }}"class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                        <a href="{{ route('pegawai.delete',$p->id) }}"class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                     </td>
                                 </tr>      
                             </tbody>
